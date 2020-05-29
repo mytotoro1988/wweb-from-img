@@ -1,0 +1,16 @@
+:root{
+    --primary-color: #429a9c;
+    --header-color:#262626;
+    --white-color: #fff;
+    --background-color: #f2f2f2;
+    --text-color: #656565;
+    --star-color: #fdad00;
+    --icon-color:#dbdbdb;   
+    --info-color: #313131;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.4rem;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
