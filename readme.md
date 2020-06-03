@@ -18,12 +18,12 @@ this demo how to use git
 //git revert <id commit> (sai nen bo no di 1 commit nao do. (nguy hiem))
 //git branch
 // .gitignore
-//chalk (' đổi màu cho code)
+//chalk 
 
 
-//git checkout -b <feature_branch> /// kho giai thic
+//git checkout -b <feature_branch>
 //git push origin <branch>
-//create a pull request on ithub
+//create a pull request on github
 //4.review code
     4.1 review in gittthub
     4.2 review ofline
