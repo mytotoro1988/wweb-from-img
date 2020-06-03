@@ -2,7 +2,10 @@
 var express = require('express');
 var app = express();
 var port = 3000;
+var bodyParser = require('body-parser')
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -42,8 +45,9 @@ app.get('/users/search', function(req, res){
 app.get('/users/create',function(req,res){
     res.render('users/create')
 });
-app.post('users/create',function(req,res){
-
+app.post('/users/create',function(req,res){
+    users.push(req.body)
+    res.redirect('/users') // chuyen nguoi dung ve trang truoc
 })
 
 app.listen(port, function(){
