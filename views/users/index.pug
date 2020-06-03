@@ -1,0 +1,10 @@
+h2 Users List Infomation
+
+form(action="/users/search",method="GET")
+    input(type='text',name='q',placeholder="name")
+    input(type="submit")
+    button Search
+
+ul
+    each user in users
+        li= user.name

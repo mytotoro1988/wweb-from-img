@@ -21,7 +21,7 @@ this demo how to use git
 //chalk (' đổi màu cho code)
 
 
-//git checkout -b <feature_branch>
+//git checkout -b <feature_branch> /// kho giai thic
 //git push origin <branch>
 //create a pull request on ithub
 //4.review code
