@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var port = 3000;
-
+var shortid = require('shortid');
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
@@ -36,10 +36,10 @@ app.get('/users', function(req, res){
 })
 
 
-//tttim kiem theo ten
+//tim kiem theo ten
 app.get('/users/search', function(req, res){
     var q = req.query.q;
-    var matcheUsers = users.filter(function(user){
+    var matcheUsers = db.get('users').value().filter(function(user){
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     })
     res.render('users/index',{
@@ -54,12 +54,21 @@ app.get('/users/create',function(req,res){
     res.render('users/create')
 });
 app.post('/users/create',function(req,res){
-
+    req.body.id = shortid.generate();//tao id ngau nhien bang shortid
     db.get('users').push(req.body).write();
     res.redirect('/users');
   // chuyen nguoi dung ve trang truoc
     
 
+})
+
+
+app.get('/users/:id',function(req,res){//truyen id vao link moi
+    var id = req.params.id;
+    var user = db.get('users').find({id : id}).value();
+    res.render('users/view',{
+        user: user
+    })
 })
 
 app.listen(port, function(){
