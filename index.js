@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var port = 3000;
+
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
@@ -12,6 +13,11 @@ db.defaults({users:[] })
   .write();
 
 
+
+
+
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -48,8 +54,12 @@ app.get('/users/create',function(req,res){
     res.render('users/create')
 });
 app.post('/users/create',function(req,res){
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
+  // chuyen nguoi dung ve trang truoc
+    
+
 })
 
 app.listen(port, function(){

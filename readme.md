@@ -23,6 +23,7 @@ this demo how to use git
 
 //git checkout -b <feature_branch>
 //git push origin <branch>
+//git pull 
 //create a pull request on github
 //4.review code
     4.1 review in gittthub
