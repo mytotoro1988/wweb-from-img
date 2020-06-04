@@ -1,16 +1,20 @@
-h2 Users List Infomation
+extends ../layouts/common
 
-form(action="/users/search",method="GET")
-    input(type='text',name='q',placeholder="name")
-    input(type="submit")
-    button Search
+block content
+    h2 Users List Infomation
 
-p
-a(href="/users/create") Create User
-p
-ul
-    each user in users
-        li
-            span= user.name
-            span &nbsp;
-            a(href="/users/"+ user.id) View
+    form(action="/users/search",method="GET",class="d-flex")
+        input(type='text',name='q',placeholder="name",class="form-control " )
+        input(type="submit",class="btn btn-danger")
+        span  
+        button(class="btn btn-danger") Search
+
+    p
+    a(href="/users/create") Create User
+    p
+    ul
+        each user in users
+            li
+                span= user.name
+                span &nbsp;
+                a(href="/users/"+ user.id) View
