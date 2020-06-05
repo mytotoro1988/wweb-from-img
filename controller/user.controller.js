@@ -17,6 +17,7 @@ module.exports.search = function(req, res){
     })
 }
 module.exports.create = function(req,res){
+    console.log(req.cookies);
     res.render('users/create')
 }
 module.exports.get = function(req,res){//truyen id vao link moi
@@ -30,7 +31,7 @@ module.exports.postCreate = function(req,res){
     req.body.id = shortid.generate();//tao id ngau nhien bang shortid
 
     console.log(res.locals)
-    
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
   // chuyen nguoi dung ve trang truoc

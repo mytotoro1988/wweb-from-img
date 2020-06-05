@@ -1,57 +1,21 @@
 {
   "users": [
     {
-      "name": "Hien",
-      "id": "OV1qUEJ8-"
-    },
-    {
-      "name": "Nam",
-      "id": "Kl5bowgEt"
-    },
-    {
-      "name": "Dinh",
-      "id": "esPAH5jkF"
-    },
-    {
-      "name": "Hoan",
-      "id": "oPrjqk-Te"
-    },
-    {
-      "name": "Cuong",
-      "id": "w379g1LAM"
-    },
-    {
-      "name": "",
-      "id": "zeZo3J2qa"
-    },
-    {
-      "name": "name",
-      "id": "R7_qZNlWi"
-    },
-    {
-      "name": "Cuong",
-      "phone": "0325555",
-      "id": "aHTvT6fJx"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "EYaiZtnfv"
-    },
-    {
-      "name": "si",
-      "phone": "123",
-      "id": "XUWh0UJRa"
-    },
-    {
       "name": "Cuong",
       "phone": "9977",
-      "id": "nHqLXtVH3"
+      "id": "nHqLXtVH3",
+      "email": "lehuucuong.vnua@gmail.com",
+      "password": "1"
     },
     {
       "name": "Ninh",
       "phone": "1231",
       "id": "9k4XLyvzu"
+    },
+    {
+      "name": "Cuong",
+      "phone": "11",
+      "id": "sA7qS3iDH"
     }
   ]
 }
