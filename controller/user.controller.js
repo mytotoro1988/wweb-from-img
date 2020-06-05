@@ -28,9 +28,23 @@ module.exports.get = function(req,res){//truyen id vao link moi
 }
 module.exports.postCreate = function(req,res){
     req.body.id = shortid.generate();//tao id ngau nhien bang shortid
+    var errors = [];
+    //xac thuc
+    if(!req.body.name){
+        errors.push('No name')
+    }
+    if(!req.body.phone){
+        errors.push('No phone number')
+    }
+    if(errors.length){
+        res.render('users/create',{
+            errors: errors,
+            values:req.body
+        })
+        return;
+    }
 
-    console.log(res.locals)
-    
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
   // chuyen nguoi dung ve trang truoc
