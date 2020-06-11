@@ -35,7 +35,4 @@ module.exports.postCreate = function(req,res){
     db.get('users').push(req.body).write();
     res.redirect('/users');
   // chuyen nguoi dung ve trang truoc
-    
-    
-
 }
