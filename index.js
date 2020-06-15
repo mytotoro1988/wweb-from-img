@@ -26,7 +26,9 @@ app.set('views', './views');
 
 app.use('/users',authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
-app.use('/products', productRoute);
+app.use('/products',authMiddleware.requireAuth,  productRoute);
+// app.use('/products',  productRoute);
+app.use('/cart',  productRoute);
 
 
 app.get('/', function(req, res){

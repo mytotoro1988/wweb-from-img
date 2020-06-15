@@ -1,5 +1,6 @@
 extends ../layouts/common
 
+
 block content
 
   h2 Make something
@@ -14,20 +15,32 @@ block content
               p.card-text=product.description
               a.btn.btn-primary(href='#') Add to cart
 
-
+    //- nav(aria-label='...')
+    //-     ul.pagination
+    //-         li.page-item.disabled
+    //-         a.page-link(href='/products/?page=' + prevPage) Previous
+    //-         li.page-item
+    //-         a.page-link(href='/products/?page=' + prevPage) #{prevPage}
+    //-         li.page-item.active(aria-current='page')
+    //-         a.page-link(href='/products/?page=' + page)
+    //-             | #{page}
+    //-             span.sr-only (current)
+    //-         li.page-item
+    //-         a.page-link(href='/products/?page=' + nextPage) #{nextPage}
+    //-         li.page-item
+    //-         a.page-link(href='/products/?page=' + nextPage) Next
     nav(aria-label='Page navigation example')
       ul.pagination
         li.page-item
           a.page-link(href='#') Previous
         li.page-item
-          a.page-link(href="/products?page="+page) 1
+          a.page-link(href="/products?page=1") 1
         li.page-item
-          a.page-link(href='/products?page='+1) 2
+          a.page-link(href='/products?page=2') 2
         li.page-item
-          a.page-link(href='/products?page='+2) 4
+          a.page-link(href='/products?page=3') 3
         li.page-item
           a.page-link(href='#') Next
      
      
          
-               

@@ -9,10 +9,12 @@ html
             span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
             ul.navbar-nav.mr-auto
-                li.nav-item.active
-                    a.nav-link(href='#')| Home 
                 li.nav-item
                     a.nav-link(href='/users') User
+                li.nav-item.active
+                    a.nav-link(href='/products')| Products
+                li.nav-item
+                    a.nav-link(href='/cart') Cart
         if user
             p= user.name
     .container.pt-5
