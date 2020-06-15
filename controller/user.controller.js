@@ -30,12 +30,14 @@ module.exports.get = function(req,res){//truyen id vao link moi
 module.exports.postCreate = function(req,res){
     req.body.id = shortid.generate();//tao id ngau nhien bang shortid
 
-    console.log(res.locals)
+    //luu avatar
+    var a = "uploads/";
+    var b =a+req.file.path.slice(15);
+    req.body.avatar = b;
+
+  
 
     db.get('users').push(req.body).write();
     res.redirect('/users');
   // chuyen nguoi dung ve trang truoc
-    
-    
-
 }
