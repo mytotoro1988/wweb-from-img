@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+   <div class="main">
+    <form action="", method="POST" class="form" id="form-1">
+    <p class="desc"> test sign in</p>
+
+    <div class="spacer"></div>
+
+    <div class="form-group">
+        <div for="fullname" class="form-label">Tên đầy đủ</div>
+        <input name="fullname"type="text" id="fullname" placeholder="VD: Lê Cường">
+        <span class="form-message"></span>
+    </div>
+    <div class="form-group">
+        <div for="email" class="form-label">Email</div>
+        <input name="email"type="text" id="email" placeholder="VD: lecuong123@gmail.com">
+        <span class="form-message"></span>
+    </div>
+    <div class="form-group">
+        <div for="password" class="form-label">Mật Khẩu</div>
+        <input name="password"type="password" id="password">
+        <span class="form-message"></span>
+    </div>
+    <div class="form-group">
+        <div for="password-confirmation" class="form-label">Nhập Lại Mật Khẩu</div>
+        <input name="password-confirmation"type="text" id="password-confirmation">
+        <span class="form-message"></span>
+    </div>
+</form>
+</div>
+<script src="./validator.js"></script>
+<script>
+    //Mong muốn nhận được
+    Validator({
+        errorSelector:'.form-message',
+        form: '#form-1', 
+        rules:[
+            Validator.isRequired('#fullname', "Vui lòng nhập vào trường này"),
+            Validator.isEmail('#email'),
+            Validator.minLength('#password',6),
+            Validator.isConfirmed('#password-confirmation'),
+            Validator.isConfirmed('#password-confirmation',function(){
+                return document.querySelector('#form-1 #password').value;
+            },"Mật khẩu nhập lại không chính xác")
+        ]
+    });
+</script>
+</body>
+</html>
